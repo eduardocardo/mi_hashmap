@@ -187,18 +187,24 @@ public class ArrayListInt
         int element = -1;        //consideramos que el indice no es valido
         if((index<arrayList.length) && (index>=0))  //control de rango para comprobar que el indice es valido
         {
+            int [] temp = new int[arrayList.length - 1];
             int cont = 0;
             boolean found = false;   //se considera que no se ha encontrado el objeto
-            while((cont<arrayList.length) &&(!found))  //mientras no se encuentre el objeto y no se recorra toda la coleccion se repite el ciclo
+            while((cont<arrayList.length-1) &&(!found))  //mientras no se encuentre el objeto y no se recorra toda la coleccion se repite el ciclo
             {
                 if(cont == index)   //si el valor del parametro coincide con la posicion de la coleccion
                 {
                     element = arrayList[cont]; //guardamos el elemento contenido en la posicion especificada
-                    arrayList[cont]= 0;       //eliminamos el elemento
+                    temp[cont] = arrayList[cont + 1];       //eliminamos el elemento
                     found = true;
+                }
+                else
+                {
+                    temp[cont] = arrayList[cont];
                 }
                 cont++;
             }
+            arrayList = temp;
         }
         return element;
     }

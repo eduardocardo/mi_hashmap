@@ -108,11 +108,37 @@ public class MiHashMap
     public int size()
     {
         int tamaño = -1;
-        //se comprueba si el tamaño de ambos arrayList coincide
+        //se comprueba si el  numero de elementos de ambos arrayList coincide
         if(key.size() == values.size())
         {
             tamaño = key.size();
         }
         return tamaño;
+    }
+    
+    /**
+     * Metodo que elimina del mapa el elemento con la clave dada
+     * @param clave es la clave del elemento que se quiere eliminar
+     * @return el elemento eliminado o -1 si no existe la clave en el mapa
+     */
+    public int remove(String clave)
+    {
+        int eliminado = -1;
+        //primero se comprueba si la clave pasada por parametro existe en el mapa
+        boolean existe = false;
+        int i = 0;
+        while((i < key.size()) && !existe)
+        {
+            if(clave == key.get(i))
+            {
+                eliminado = values.get(i);
+                int index = key.indexOf(clave);
+                values.remove(index);
+                key.remove(i);
+                existe = true;
+            }
+            i++;
+        }
+        return eliminado;
     }
 }
