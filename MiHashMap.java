@@ -179,4 +179,20 @@ public class MiHashMap
         return contiene;
     }
     
+    /**
+     * Metodo que comprueba si el mapa tiene un determinado valor
+     * @param valor es el valor que se quiere comprobar si existe
+     * @return true si el valor existe en el mapa
+     */
+    public boolean containsValue(int valor)
+    {
+        //se considera que el mapa no contiene ese valor
+        boolean contiene = false;
+        //si el arrayListInt contiene ese valor pasado por parametro
+        if(values.contains(valor))
+        {
+            contiene = true;
+        }
+        return contiene;
+    }
 }
