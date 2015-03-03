@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 /**
  * Write a description of class MiHashMap here.
  * 
@@ -140,5 +141,19 @@ public class MiHashMap
             i++;
         }
         return eliminado;
+    }
+    
+    /**
+     * Metodo que vacia el mapa
+     */
+    public void clear()
+    {
+        //primero se vacia las claves almacenadas en el arrayList
+        for(Iterator<String> it = key.iterator(); it.hasNext();it.remove())
+        {
+            it.next();
+        }
+        //despues se vacia los valores del arrayListInt
+        values.clear();
     }
 }
