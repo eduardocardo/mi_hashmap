@@ -130,11 +130,16 @@ public class MiHashMap
         int i = 0;
         while((i < key.size()) && !existe)
         {
+            //si la clave pasada por parametro coincide con algun valor del arrayList
             if(clave == key.get(i))
             {
+                //se almacena el valor asociado a esa clave con ese indice
                 eliminado = values.get(i);
+                //se guarda el indice correspondiente a esa clave
                 int index = key.indexOf(clave);
+                //se elimina del arrayListInt el valor asociado a ese indice
                 values.remove(index);
+                //se elimina la clave del arrayList asociado a ese indice
                 key.remove(i);
                 existe = true;
             }
@@ -156,4 +161,22 @@ public class MiHashMap
         //despues se vacia los valores del arrayListInt
         values.clear();
     }
+    
+    /**
+     * Metodo que comprueba si el mapa tiene una determinada clave
+     * @param clave es la clave que se quiere comprobar si existe
+     * @return true si el mapa contiene la clave
+     */
+    public boolean containsKey(String clave)
+    {
+        //se considera que el mapa no contiene la clave
+        boolean contiene = false;
+        //si el arrayList contiene la clave pasada por parametro
+        if(key.contains(clave))
+        {
+            contiene = true;
+        }
+        return contiene;
+    }
+    
 }
