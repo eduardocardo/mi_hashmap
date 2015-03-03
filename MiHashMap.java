@@ -100,4 +100,19 @@ public class MiHashMap
         }
         return vacio;
     }
+    
+    /**
+     * Metodo que devuelve el numero de elementos del mapa
+     * @return numero de elementos del mapa
+     */
+    public int size()
+    {
+        int tamaño = -1;
+        //se comprueba si el tamaño de ambos arrayList coincide
+        if(key.size() == values.size())
+        {
+            tamaño = key.size();
+        }
+        return tamaño;
+    }
 }
