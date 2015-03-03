@@ -84,4 +84,20 @@ public class MiHashMap
         }
         return retorno;
     }
+    
+    /**
+     * Metodo que comprueba si el mapa no tiene elementos
+     * @return true si el mapa no contiene elementos
+     */
+    public boolean isEmpty()
+    {
+        //se considera de inicio que el mapa no esta vacio
+        boolean vacio = false;
+        //se comprueba si no hay elementos tanto en el arrayList como en el arrayListInt
+        if((key.size()==0) && values.isEmpty())
+        {
+            vacio = true;
+        }
+        return vacio;
+    }
 }
